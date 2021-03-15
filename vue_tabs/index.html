@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+    <title>Vue Tabs</title>
+
+    <style>
+        .tabs {
+            padding-top: 1em;
+        }
+
+        .tabs li a {
+            font-weight: bold;
+            text-transform: capitalize;
+            transition: all 400ms ease-in-out;
+        }
+
+        li.is-active {
+            background-color: #c1b0de;
+        }
+
+        .tabs li.is-active a {
+            color: #FFF;
+            border-bottom-color: rebeccapurple;
+        }
+
+        .list-styled {
+            margin-left: 1em;
+            list-style: disc inside;
+        }
+
+        .btn {
+            background-color: rebeccapurple;
+            color: #dac8f9;
+            border: none;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 1em;
+            padding: .5em 1em;
+            border-radius: 3px;
+        }
+    </style>
+</head>
+<body>
+
+<div id="root" class="container">
+    <modal v-show="showModal" @close-modal="showModal=false" @add-task="add"></modal>
+
+    <tabs>
+        <tab name="Tasks">
+            <h1>
+                TODO Tasks
+            </h1>
+
+            <ul class="list-styled">
+                <li v-for="task in tasks">{{task}}</li>
+            </ul>
+
+            <button @click="showModal=true" class="btn">Add Task</button>
+        </tab>
+        <tab name="doing">
+            <h1>In progress tasks</h1>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. A delectus distinctio dolor ea explicabo,
+                labore necessitatibus nostrum perferendis placeat quod rem repellendus veritatis voluptatem. Distinctio
+                et harum perferendis repudiandae ullam!
+            </p>
+        </tab>
+        <tab name="Done">
+            <h1>Completed tasks</h1>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. A delectus distinctio dolor ea explicabo,
+                labore necessitatibus nostrum perferendis placeat quod rem repellendus veritatis voluptatem. Distinctio
+                et harum perferendis repudiandae ullam!
+            </p>
+        </tab>
+    </tabs>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+
+<script src="./main.js"></script>
+</body>
+</html>
