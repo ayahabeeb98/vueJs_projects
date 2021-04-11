@@ -1,4 +1,10 @@
-# authantication-vue
+# DevJos project.
+- To Display and filter the latest developer jobs via the Github api.
+
+##Features:
+- Authentication using Firebase
+- Display available jobs
+- Filter jobs based on title,description, etc.
 
 ## Project setup
 ```
